@@ -1,6 +1,6 @@
 # Project
 
-This project is a typescript and redux application.
+This project simulates a banking application in react with typescript.
 
 ## Tech Stack
 
