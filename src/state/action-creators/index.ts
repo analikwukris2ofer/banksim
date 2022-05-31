@@ -4,6 +4,7 @@ import { ActionType } from "../action-types";
 import { Dispatch } from "redux";
 import { Action } from "../actions";
 
+//action creators usually contain the type of action and the payload to be transmitted.
 export const depositMoney = (amount: number) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({

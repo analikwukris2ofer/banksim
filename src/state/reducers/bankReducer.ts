@@ -1,6 +1,10 @@
 import { ActionType } from "../action-types";
 import { Action } from "../actions";
 
+//In redux we only update our state using actions.
+//Inorder to do this we need action creators. They create actions.
+//A reducer is a function that ultimately ends up updating the state.
+
 const initialState = 0;
 
 const reducer = (state: number = initialState, action: Action) => {
