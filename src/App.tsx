@@ -2,7 +2,11 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators, State } from "./state";
 
+//useSelector gives us access to our state.
 function App() {
   const Layout = styled.div`
     display: flex;
@@ -21,13 +25,20 @@ function App() {
     width: 150px;
     margin-bottom: 20px;
   `;
+
+  const dispatch = useDispatch();
+  const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+  const amount = useSelector((state: State) => state.bank);
   return (
     <div className="App">
-      <h1>0</h1>
+      <h1>{amount}</h1>
       <Layout>
-        <Button>Deposit</Button>
-        <Button>Withdraw</Button>
-        <Button>Bankrupt</Button>
+        <Button onClick={() => depositMoney(5000)}>Deposit</Button>
+        <Button onClick={() => withdrawMoney(500)}>Withdraw</Button>
+        <Button onClick={() => bankrupt()}>Bankrupt</Button>
       </Layout>
     </div>
   );

@@ -4,7 +4,7 @@ import { ActionType } from "../action-types";
 import { Dispatch } from "redux";
 import { Action } from "../actions";
 
-const depositMoney = (amount: number) => {
+export const depositMoney = (amount: number) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.DEPOSIT,
@@ -12,7 +12,7 @@ const depositMoney = (amount: number) => {
     });
   };
 };
-const withdrawMoney = (amount: number) => {
+export const withdrawMoney = (amount: number) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.WITHDRAW,
@@ -20,7 +20,7 @@ const withdrawMoney = (amount: number) => {
     });
   };
 };
-const bankrupt = () => {
+export const bankrupt = () => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.BANKRUPT,

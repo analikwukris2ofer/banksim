@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+
 import bankReducer from "./bankReducer";
 
 const reducers = combineReducers({
@@ -6,3 +7,5 @@ const reducers = combineReducers({
 });
 
 export default reducers;
+
+export type State = ReturnType<typeof reducers>;
